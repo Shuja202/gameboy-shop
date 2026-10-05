@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Pocket — Classic Handheld</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="nav">
+    <a href="#" class="logo">pocket<span>.</span></a>
+    <button class="cart-btn" id="openCart" aria-label="Open cart">
+      Cart <span class="badge" id="cartCount">0</span>
+    </button>
+  </header>
+
+  <main class="product">
+    <div class="stage">
+      <div class="screen-glow"></div>
+      <img id="productImg" src="images/gameboy.webp" alt="Classic handheld game console">
+    </div>
+
+    <section class="info">
+      <p class="eyebrow">Limited drop · 1 per customer</p>
+      <h1>The Original<br>Handheld.</h1>
+      <p class="desc">
+        A backlit screen. Two buttons. Zero notifications.
+        A fully restored classic, cleaned, tested and ready to play straight out of the box.
+      </p>
+
+      <div class="price-row">
+        <span class="price">$0.00</span>
+        <span class="was">$89.00</span>
+        <span class="tag">Free</span>
+      </div>
+
+      <ul class="specs">
+        <li><span>Display</span>2.6" reflective LCD</li>
+        <li><span>Power</span>4 × AA, ~30 hrs</li>
+        <li><span>Condition</span>Refurbished</li>
+        <li><span>Shipping</span>Free, worldwide</li>
+      </ul>
+
+      <button class="primary" id="addToCart">Add to cart</button>
+    </section>
+  </main>
+
+  <footer class="foot">© 2026 pocket. Press start.</footer>
+
+  <!-- Cart drawer -->
+  <div class="scrim" id="scrim"></div>
+  <aside class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer-head">
+      <h2 id="drawerTitle">Your cart</h2>
+      <button class="icon" id="closeCart" aria-label="Close">&times;</button>
+    </div>
+
+    <div id="cartView">
+      <div id="cartItems"></div>
+      <div class="summary">
+        <div><span>Subtotal</span><span id="subtotal">$0.00</span></div>
+        <div><span>Shipping</span><span>Free</span></div>
+        <div class="total"><span>Total</span><span id="total">$0.00</span></div>
+      </div>
+      <button class="primary" id="toCheckout">Checkout</button>
+    </div>
+
+    <div id="checkoutView" hidden>
+      <p class="muted">Almost there. This one's on us.</p>
+      <div class="line-item compact">
+        <img src="images/gameboy.webp" alt="" class="thumb">
+        <div><strong>The Original Handheld</strong><span class="muted">Qty 1</span></div>
+        <span>$0.00</span>
+      </div>
+      <div class="summary">
+        <div class="total"><span>Order total</span><span>$0.00</span></div>
+      </div>
+      <button class="primary" id="placeOrder">Place order — $0.00</button>
+      <button class="ghost" id="backToCart">Back to cart</button>
+    </div>
+  </aside>
+
+  <!-- Order confirmation (video) modal -->
+  <div class="modal" id="videoModal" aria-hidden="true">
+    <div class="modal-card">
+      <div class="modal-head">
+        <p class="eyebrow">Order confirmed · #000000</p>
+        <button class="icon" id="closeVideo" aria-label="Close">&times;</button>
+      </div>
+      <div class="video-frame" id="videoFrame"></div>
+      <a class="fallback" id="videoFallback" target="_blank" rel="noopener">Video not playing? Watch on YouTube</a>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
